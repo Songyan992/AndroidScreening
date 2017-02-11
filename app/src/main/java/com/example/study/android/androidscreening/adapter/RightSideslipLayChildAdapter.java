@@ -83,12 +83,18 @@ public class RightSideslipLayChildAdapter extends SimpleBaseAdapter<AttrList.Att
 
             }
             notifyDataSetChanged();
-            slidLayFrameChildCallBack.CallBackSelectData(seachData);
+            slidLayFrameChildCallBack.CallBackSelectData(removeDuplicate(seachData));
 
 
         }
     };
-
+    //去除重复数据
+    public List<AttrList.Attr.Vals> removeDuplicate(List<AttrList.Attr.Vals> list) {
+        HashSet h = new HashSet(list);
+        list.clear();
+        list.addAll(h);
+        return list;
+    }
 
     private SlidLayFrameChildCallBack slidLayFrameChildCallBack;
 

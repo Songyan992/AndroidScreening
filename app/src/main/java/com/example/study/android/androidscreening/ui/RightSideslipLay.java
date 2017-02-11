@@ -97,7 +97,7 @@ public class RightSideslipLay extends RelativeLayout {
     private RightSideslipChildLay.onMeanCallBack meanCallBack = new RightSideslipChildLay.onMeanCallBack() {
         @Override
         public void isDisMess(boolean isDis, List<AttrList.Attr.Vals> mBrandData, String str) {
-            if (mBrandData != null && !TextUtils.isEmpty(str)) {
+            if (mBrandData != null) {
                 if (attr.getAttr().size() > 0) {
                     ((AttrList.Attr) attr.getAttr().get(0)).setVals(getValsDatas(mBrandData));
                     ((AttrList.Attr) attr.getAttr().get(0)).setShowStr(str);

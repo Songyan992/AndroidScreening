@@ -96,6 +96,7 @@ public class RightSideslipChildLay extends FrameLayout {
 
             }
         }
+        selectBrandData = removeDuplicate(selectBrandData);
     }
 
     private OnClickListenerWrapper ClickListener = new OnClickListenerWrapper() {
