@@ -28,12 +28,6 @@ public class ScreeningActivity extends AppCompatActivity {
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (LinearLayout) findViewById(R.id.nav_view);
         mFrameTv = (TextView) findViewById(R.id.screenTv);
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
-            drawer.setFitsSystemWindows(false);
-            if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
-                navigationView.setPadding(0, UiUtils.getStatusBarHeight(ScreeningActivity.this), 0, 0);
-            }
-        }
         drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.RIGHT);
 
         menuHeaderView = new RightSideslipLay(ScreeningActivity.this);

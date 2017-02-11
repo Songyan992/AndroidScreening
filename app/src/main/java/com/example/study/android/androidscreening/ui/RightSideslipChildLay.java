@@ -28,13 +28,11 @@ public class RightSideslipChildLay extends FrameLayout {
     private List<AttrList.Attr.Vals> selectBrandData;
     private ImageView meunBackIm;
     private TextView meunOkTv;
-  //  private List<AttrList.Attr.Vals> Fristlist;
 
     public RightSideslipChildLay(Context context, List<AttrList.Attr.Vals> mVals_data, List<AttrList.Attr.Vals> Fristlist) {
         super(context);
         mCtx = context;
         this.mVals_data = mVals_data;
-       // this.Fristlist = Fristlist;
         selectBrandData = new ArrayList<AttrList.Attr.Vals>();
         initView(mVals_data, Fristlist);
     }

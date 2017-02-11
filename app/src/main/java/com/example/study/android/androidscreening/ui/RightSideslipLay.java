@@ -31,7 +31,9 @@ public class RightSideslipLay extends RelativeLayout {
     private ImageView backBrand;
     private RelativeLayout mRelateLay;
     private RightSideslipLayAdapter slidLayFrameAdapter;
-    private String JsonStr = "{\"attr\": [{ \"isoPen\": true,\"single_check\": 0,\"key\": \"品牌\", \"vals\": [ { \"val\": \"雅格\"}, {\"val\": \"志高/Chigo\" }, {\"val\": \"格东方\" },{\"val\": \"Chigo\" }, {\"val\": \"格OW\" },{\"val\": \"志go\" }, {\"val\": \"格LLOW\" },{\"val\": \"志o\" }, {\"val\": \"LLOW\" }, {\"val\": \"众桥\"},{\"val\": \"超人/SID\" },{ \"val\": \"扬子342\" }, { \"val\": \"扬舒服\" }, { \"val\": \"扬子东方\"},{ \"val\": \"荣事达/Royalstar\"}]},{\"single_check\": 0,\"key\": \"灭蚊器类型\", \"vals\": [{ \"val\": \"光触媒灭蚊器\"}]},{\"single_check\": 0,\"key\": \"买的多，价更低！！！\", \"vals\": [{\"val\": \"1个\"}]},{ \"single_check\": 0, \"key\": \"超人灭蚊器型号\",\"vals\": [{\"val\": \"SI23\" }]}]}";
+    private String JsonStr = "{\"attr\": [{ \"isoPen\": true,\"single_check\": 0,\"key\": \"品牌\", \"vals\": [ { \"val\": \"雅格\"}, {\"val\": \"志高/Chigo\" }, {\"val\": \"格东方\" },{\"val\": \"Chigo\" }, {\"val\": \"格OW\" },{\"val\": \"志go\" }, {\"val\": \"格LLOW\" },{\"val\": \"志o\" }, {\"val\": \"LLOW\" }, {\"val\": \"众桥\"},{\"val\": \"超人/SID\" },{ \"val\": \"扬子342\" }, { \"val\": \"扬舒服\" }, { \"val\": \"扬子东方\"},{ \"val\": \"荣事达/Royalstar\"}]},{\"single_check\": 0,\"key\": \"是否进口\", \"vals\": [{ \"val\": \"国产\"},{ \"val\": \"进口\"}]}," +
+            "{\"single_check\": 0,\"key\": \"灭蚊器类型\", \"vals\": [{ \"val\": \"光触媒灭蚊器\"}]}," +
+            "{\"single_check\": 0,\"key\": \"个数\", \"vals\": [{\"val\": \"1个\"},{\"val\": \"2个\"},{\"val\": \"3个\"},{\"val\": \"4个\"},{\"val\": \"5个\"},{\"val\": \"5个以上\"},{\"val\": \"10个以上\"}]},{ \"single_check\": 0, \"key\": \"型号\",\"vals\": [{\"val\": \"SI23\" },{\"val\": \"SI23\" },{\"val\": \"SI343\" },{\"val\": \"SI563\" },{\"val\": \"Sgt23\" }]}]}";
 
     public RightSideslipLay(Context context) {
         super(context);
@@ -94,8 +96,8 @@ public class RightSideslipLay extends RelativeLayout {
     //在第二个页面改变后，返回时第一个界面随之改变，使用的接口回调
     private RightSideslipChildLay.onMeanCallBack meanCallBack = new RightSideslipChildLay.onMeanCallBack() {
         @Override
-        public void isDisMess(boolean isDis, List<AttrList.Attr.Vals> mBrandData,String str) {
-            if (mBrandData!=null&&!TextUtils.isEmpty(str)){
+        public void isDisMess(boolean isDis, List<AttrList.Attr.Vals> mBrandData, String str) {
+            if (mBrandData != null && !TextUtils.isEmpty(str)) {
                 if (attr.getAttr().size() > 0) {
                     ((AttrList.Attr) attr.getAttr().get(0)).setVals(getValsDatas(mBrandData));
                     ((AttrList.Attr) attr.getAttr().get(0)).setShowStr(str);

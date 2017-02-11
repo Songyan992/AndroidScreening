@@ -78,9 +78,7 @@ public class RightSideslipLayAdapter extends SimpleBaseAdapter<AttrList.Attr> {
         mChildAdapter.setSlidLayFrameChildCallBack(new RightSideslipLayChildAdapter.SlidLayFrameChildCallBack() {
             @Override
             public void CallBackSelectData( List<AttrList.Attr.Vals> seachData) {
-
                 mAttr.setShowStr(setupSelectStr(seachData));
-                mAttr.setSelectStrs(setupSelectDataStr(seachData));
                 mAttr.setSelectVals(seachData);
                 notifyDataSetChanged();
                 selechDataCallBack.setupAttr(setupSelectDataStr(seachData), mAttr.getKey());
@@ -90,7 +88,6 @@ public class RightSideslipLayAdapter extends SimpleBaseAdapter<AttrList.Attr> {
         mChildAdapter.setShowPopCallBack(new RightSideslipLayChildAdapter.ShowPopCallBack() {
             @Override
             public void setupShowPopCallBack(List<AttrList.Attr.Vals> seachData) {
-                mAttr.setSelectStrs(setupSelectDataStr(seachData));
                 mAttr.setSelectVals(seachData);
                 mAttr.setShowStr(setupSelectStr(seachData));
                 mSelechMoreCallBack.setupMore(seachData);
@@ -139,7 +136,6 @@ public class RightSideslipLayAdapter extends SimpleBaseAdapter<AttrList.Attr> {
         protected void onSingleClick(View v) {
             int id = v.getId();
             if (id == R.id.item_select_lay) {
-                //    TextView moreTV = (TextView) v.getTag();
                 AutoMeasureHeightGridView childLv3GV = (AutoMeasureHeightGridView) v.getTag();
                 int pos = (int) childLv3GV.getTag();
                 AttrList.Attr itemdata = data.get(pos);

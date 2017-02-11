@@ -7,7 +7,7 @@ import java.util.List;
  * Created by songyan on 2017/2/5.
  */
 
- public  class AttrList implements Serializable {
+public class AttrList implements Serializable {
 
     private List<Attr> attr;
 
@@ -20,22 +20,16 @@ import java.util.List;
     }
 
     public static class Attr implements Serializable {
+        //属性值的title
         private String key;
+        //属性值的title对应的数据
         private List<Vals> vals;
-        //single_check=1单选 =0多选
-        private String single_check;
+        //设置选中的数据
+        private List<Vals> SelectVals;
+        //状态是否打开
         private boolean isoPen = false;
         private String showStr = "";
-        private List<String> selectStrs;
-        private List<Vals> SelectVals;
 
-        public List<Vals> getSelectVals() {
-            return SelectVals;
-        }
-
-        public void setSelectVals(List<Vals> selectVals) {
-            SelectVals = selectVals;
-        }
 
         public boolean isoPen() {
             return isoPen;
@@ -45,12 +39,12 @@ import java.util.List;
             this.isoPen = isoPen;
         }
 
-        public List<String> getSelectStrs() {
-            return selectStrs;
+        public List<Vals> getSelectVals() {
+            return SelectVals;
         }
 
-        public void setSelectStrs(List<String> selectStrs) {
-            this.selectStrs = selectStrs;
+        public void setSelectVals(List<Vals> selectVals) {
+            SelectVals = selectVals;
         }
 
         public String getShowStr() {
@@ -77,14 +71,6 @@ import java.util.List;
             this.key = key;
         }
 
-
-        public String getSingle_check() {
-            return single_check;
-        }
-
-        public void setSingle_check(String single_check) {
-            this.single_check = single_check;
-        }
 
         public static class Vals implements Serializable {
             private String val;

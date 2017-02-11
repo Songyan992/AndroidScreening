@@ -17,19 +17,13 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import static android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE;
 
 public class ScreeningListAdapter extends SimpleBaseAdapter<AttrList.Attr.Vals> {
     private List<AttrList.Attr.Vals> chickList;
-    String pointChick;
 
     public ScreeningListAdapter(Context context, List<AttrList.Attr.Vals> data) {
         super(context, data);
         chickList = new ArrayList<AttrList.Attr.Vals>();
-    }
-
-    public void setChickCb(String p) {
-        pointChick = p;
     }
 
     @Override
@@ -42,14 +36,7 @@ public class ScreeningListAdapter extends SimpleBaseAdapter<AttrList.Attr.Vals> 
         TextView mubTv = holder.getView(R.id.brand_list_Tv);
         CheckBox brandCb = holder.getView(R.id.select_brand_cb);
         LinearLayout brandLay = holder.getView(R.id.select_brand_lay);
-         final AttrList.Attr.Vals topBrand = getData().get(position);//181,181,181
-
-
-        if (!isEmptyAfterTrim(pointChick)) {
-            if (pointChick.equals(topBrand.getV())) {
-                brandLay.performClick();
-            }
-        }
+        final AttrList.Attr.Vals topBrand = getData().get(position);
 
         brandCb.setVisibility(topBrand.isChick() ? View.VISIBLE : View.GONE);
         mubTv.setText((topBrand.getV()));
@@ -106,15 +93,7 @@ public class ScreeningListAdapter extends SimpleBaseAdapter<AttrList.Attr.Vals> 
         this.mBack = mBack;
     }
 
-    private CharSequence matcherSearchText(int color, String string, String keyWord) {
-        SpannableStringBuilder builder = new SpannableStringBuilder(string);
-        int indexOf = string.indexOf(keyWord);
-        if (indexOf != -1) {
-            builder.setSpan(new ForegroundColorSpan(color), indexOf, indexOf + keyWord.length(), SPAN_EXCLUSIVE_EXCLUSIVE);
-        }
-        return builder;
-    }
-    public  boolean isEmptyAfterTrim(String s) {
+    public boolean isEmptyAfterTrim(String s) {
         return TextUtils.isEmpty(s) || TextUtils.isEmpty(s.trim()) || "null".equals(s);
     }
 }

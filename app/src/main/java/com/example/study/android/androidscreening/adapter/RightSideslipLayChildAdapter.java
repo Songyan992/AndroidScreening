@@ -19,10 +19,6 @@ public class RightSideslipLayChildAdapter extends SimpleBaseAdapter<AttrList.Att
 
     private List<AttrList.Attr.Vals> seachData;
 
-    public List<AttrList.Attr.Vals> getSeachData() {
-        return seachData;
-    }
-
     public void setSeachData(List<AttrList.Attr.Vals> seachData) {
         this.seachData = seachData;
     }
@@ -93,14 +89,6 @@ public class RightSideslipLayChildAdapter extends SimpleBaseAdapter<AttrList.Att
         }
     };
 
-
-    //去除重复数据
-    public List<AttrList.Attr.Vals> removeDuplicate(List<AttrList.Attr.Vals> list) {
-        HashSet h = new HashSet(list);
-        list.clear();
-        list.addAll(h);
-        return list;
-    }
 
     private SlidLayFrameChildCallBack slidLayFrameChildCallBack;
 
